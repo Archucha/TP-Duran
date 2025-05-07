@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace TP_Duran
 {
-    internal class Provincia
+    public class Provincia
     {
         public string Nombre { get; set; }
         public string Gobernador { get; set; }
         public string Region { get; set; }
         public List <Ciudad> ciudades { get; set; } = new();
 
-        public void CargarCiudad(Ciudad ciudad)
+        public void CargarCiudades(Ciudad ciudad)
         {
             ciudades.Add(ciudad);
         }

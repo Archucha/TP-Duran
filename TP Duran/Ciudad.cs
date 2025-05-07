@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TP_Duran
 {
-    internal class Ciudad
+    public class Ciudad
     {
         public string  Nombre { get; set; }
         public int CantHabitantes { get; set; }
