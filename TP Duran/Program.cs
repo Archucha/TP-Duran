@@ -7,12 +7,19 @@ using TP_Duran;
 internal class Program
 {
     public List<Provincia> provincias = new();
+
+    public static string nombresucio { get; set; }
     public static void Main(string[] args)
     {
         {
             Provincia p = new Provincia();
             CargarProvincia(p);
-            Console
+            Console.WriteLine(p.Nombre + p.Gobernador + p.Region);
+            foreach (Ciudad ciudad in p.ciudades)
+            {
+                Console.WriteLine(ciudad.CantHabitantes + ciudad.Nombre + ciudad.Superficie);
+            }
+            Console.ReadKey();
         }
     }
     public static Provincia CargarProvincia(Provincia provincia)
@@ -28,12 +35,12 @@ internal class Program
             Console.WriteLine("Ingrese la region");
             provincia.Region = Console.ReadLine();
             do
-            {
+            { 
                 CargarCiudad(c);
                 provincia.CargarCiudades(c);
-                nuevaprovincia = provincia;
-                return nuevaprovincia;
-            } while (!string.IsNullOrEmpty(c.Nombre));
+            }while(!string.IsNullOrEmpty(nombresucio));
+            nuevaprovincia = provincia;
+            return nuevaprovincia;
         }
         else
         {
@@ -42,17 +49,16 @@ internal class Program
     }
     public static Ciudad CargarCiudad(Ciudad ciudad)
     {
-        Ciudad nuevaciudad ;
         Console.WriteLine("Ingrese el nombre de la ciudad");
-        ciudad.Nombre = Console.ReadLine();
-        if (!string.IsNullOrEmpty(ciudad.Nombre))
+        nombresucio = Console.ReadLine();
+        if (!string.IsNullOrEmpty(nombresucio))
         {
+            ciudad.Nombre = nombresucio;
             Console.WriteLine("Ingrese la cantidad de habitantes");
             ciudad.CantHabitantes = int.Parse(Console.ReadLine());
             Console.WriteLine("Ingrese la superficie en KM2");
             ciudad.Superficie = int.Parse(Console.ReadLine());
-            nuevaciudad = ciudad;
-            return nuevaciudad;
+            return ciudad;
         }
         else
         {
