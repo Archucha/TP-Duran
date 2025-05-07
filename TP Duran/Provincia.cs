@@ -15,7 +15,7 @@ namespace TP_Duran
 
         public void CargarCiudad(Ciudad ciudad)
         {
-            
+            ciudades.Add(ciudad);
         }
     }
 }
