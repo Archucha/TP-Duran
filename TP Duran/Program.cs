@@ -19,7 +19,12 @@ internal class Program
         ciudad.Nombre = Console.ReadLine();
         if (!string.IsNullOrEmpty(ciudad.Nombre))
         {
-
+            string nuevaciudad;
+            ciudad = nuevaciudad;
+            Console.WriteLine("Ingrese la cantidad de habitantes");
+            ciudad.CantHabitantes = int.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese la superficie en KM2");
+            ciudad.Superficie = int.Parse(Console.ReadLine());
             return nuevaciudad;
         }
         else
