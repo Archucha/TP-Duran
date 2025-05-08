@@ -11,5 +11,6 @@ namespace TP_Duran
         public string  Nombre { get; set; }
         public int CantHabitantes { get; set; }
         public int Superficie { get; set; }
+        public Provincia provincia { get; set; }
     }
 }

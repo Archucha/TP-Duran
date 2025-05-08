@@ -13,9 +13,5 @@ namespace TP_Duran
         public string Region { get; set; }
         public List <Ciudad> ciudades { get; set; } = new();
 
-        public void CargarCiudades(Ciudad ciudad)
-        {
-            ciudades.Add(ciudad);
-        }
     }
 }
